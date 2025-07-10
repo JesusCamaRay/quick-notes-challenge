@@ -8,12 +8,6 @@ Quick Notes is a simple note-taking application built with Next.js. It allows us
 - **View Notes:** See all your notes at a glance.
 - **Simple Interface:** A clean and intuitive user interface.
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Demo
-
-![Quick Notes Demo](./public/desired_output.png)
-
 ## Getting Started
 
 To get the application running locally, follow these steps:
