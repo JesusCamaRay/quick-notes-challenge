@@ -8,7 +8,11 @@ Quick Notes is a simple note-taking application built with Next.js. It allows us
 - **View Notes:** See all your notes at a glance.
 - **Simple Interface:** A clean and intuitive user interface.
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Demo
+
+![Quick Notes Demo](./public/desired_output.png)
 
 ## Getting Started
 
@@ -25,8 +29,13 @@ To get the application running locally, follow these steps:
     ```bash
     npm install
     ```
+3.  **Create a .env file:**
+    ```bash
+    cp .env.example .env
+    ```
+    Complete the .env file with the database credentials from docker-compose.yml
 
-3.  **Run the database:**
+4.  **Run the database:**
     This project uses Docker to run a PostgreSQL database. Make sure you have Docker installed and running.
     ```bash
     docker-compose up -d
@@ -63,18 +72,24 @@ This exercise is designed to test your full-stack development skills. You will e
 
 **3. Update Backend Actions**
 
-- **Task**: Modify the `createNote` server action to handle creating and associating tags with notes. This includes adding validation for the new tag data.
+- **Task**: Modify the `createNote` server action to handle creating and associating tags with notes. This includes adding validation for the new tag data. 
+    - If the tag already exists, we should not create a new tag, we should just associate the existing tag with the note.
+    - If the tag does not exist, we should create a new tag and associate it with the note.
+
 - **File to modify**: `lib/actions.ts`
 
 **4. Create a `TagInput` Component**
 
-- **Task**: Build a reusable React component for adding and displaying tags in the note creation form.
+- **Task**: Build a reusable React component for adding tags in the note creation form. The user can type a tag and press enter to update the local state of the tags. After adding all desired tags, the user can click a button to submit the title, content, and tags for the note to the server.
 - **File to create**: `components/ui/tag-input.tsx` (or similar)
 
 **5. Integrate the New Functionality**
 
 - **Task**: Integrate the `TagInput` component into the `CreateNoteForm`, update the submission logic, and display the tags for each note in the `Notes` list.
 - **Files to modify**: `components/create-note-form.tsx`, `components/notes.tsx`.
+
+**Desired outcome:**
+![image](./public/desired_output.png)
 
 This challenge will test your ability to work with a database, handle backend logic, build React components, and integrate everything into a cohesive feature. Good luck!
 
